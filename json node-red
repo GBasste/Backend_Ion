@@ -1,0 +1,1102 @@
+[
+    {
+        "id": "60e902fdb043a209",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c8a26642d713aeef",
+        "type": "tab",
+        "label": "Base de Datos",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "16a640c4835c6667",
+        "type": "websocket-listener",
+        "path": "/ws-cam-inside",
+        "wholemsg": "false"
+    },
+    {
+        "id": "95c2d6a8df3b1d85",
+        "type": "websocket-listener",
+        "path": "/ws-cam-front",
+        "wholemsg": "false"
+    },
+    {
+        "id": "87cbbc5c602edc2c",
+        "type": "websocket-listener",
+        "path": "/ws-cam-rear",
+        "wholemsg": "false"
+    },
+    {
+        "id": "bf13976e11747d69",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 124,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "a92530a8da24972f",
+        "type": "ui_tab",
+        "name": "Cronograma",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "fee32f216e151309",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "a92530a8da24972f",
+        "order": 1,
+        "disp": false,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "118aa4f5742146d4",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "a92530a8da24972f",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "631f18b4f26ab363",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": 502,
+        "tcpType": "DEFAULT",
+        "serialPort": "COM8",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": 9600,
+        "serialDatabits": 8,
+        "serialStopbits": 1,
+        "serialParity": "none",
+        "serialConnectionDelay": 100,
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "e043271563927236",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": " broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "daa5d55161ad42ac",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "022319fe16dac18e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8dc29b091fc68cd0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c60af75d44b97748",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "com4",
+        "serialbaud": "115200",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "a85047f371215874",
+        "type": "websocket-listener",
+        "path": "/ws/test",
+        "wholemsg": "false"
+    },
+    {
+        "id": "ab0f7e82d48ddfce",
+        "type": "postgreSQLConfig",
+        "name": "",
+        "host": "aws-1-us-west-2.pooler.supabase.com",
+        "hostFieldType": "str",
+        "port": "6543",
+        "portFieldType": "num",
+        "database": "postgres",
+        "databaseFieldType": "str",
+        "ssl": "true",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": 10,
+        "maxFieldType": "num",
+        "idle": "10000",
+        "idleFieldType": "num",
+        "connectionTimeout": "5000",
+        "connectionTimeoutFieldType": "num",
+        "user": "postgres.ndwgbbrynqhfrvdumpaw",
+        "userFieldType": "str",
+        "password": "edubeni2515#",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "3a010ceb432158cb",
+        "type": "websocket-listener",
+        "path": "/ws/alerts",
+        "wholemsg": "false"
+    },
+    {
+        "id": "a36cc33fe9258173",
+        "type": "serial-port",
+        "name": "COM5",
+        "serialport": "COM5",
+        "serialbaud": "115200",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "1c333176f36c529e",
+        "type": "serial-port",
+        "name": "COM8",
+        "serialport": "COM8",
+        "serialbaud": "57600",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "4894821c37521090",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "",
+        "serialbaud": "115200",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "206416303d4218d9",
+        "type": "serial-port",
+        "name": "COM8",
+        "serialport": "COM15",
+        "serialbaud": "115200",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "40b790ba11410891",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "01af46cba03e482190140b993f41d396.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "93d15701abeb684f",
+        "type": "modbus-read",
+        "z": "60e902fdb043a209",
+        "name": "PMAC770",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "HoldingRegister",
+        "adr": "0",
+        "quantity": "2",
+        "rate": "1",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "enableDeformedMessages": true,
+        "startDelayTime": "0.1",
+        "server": "631f18b4f26ab363",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 320,
+        "y": 1080,
+        "wires": [
+            [
+                "269b27a900458f3d"
+            ],
+            [
+                "3eba4d20179d809e"
+            ]
+        ]
+    },
+    {
+        "id": "269b27a900458f3d",
+        "type": "debug",
+        "z": "60e902fdb043a209",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "3eba4d20179d809e",
+        "type": "function",
+        "z": "60e902fdb043a209",
+        "name": "function 1",
+        "func": "var volt_VN = msg.payload.data[0];\nmsg.payload = Number((volt_VN/100).toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 980,
+        "wires": [
+            [
+                "269b27a900458f3d",
+                "10d891f15aedd226"
+            ]
+        ]
+    },
+    {
+        "id": "9cb18e24aa572a7e",
+        "type": "mqtt in",
+        "z": "60e902fdb043a209",
+        "name": "",
+        "topic": "prueba/data",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8dc29b091fc68cd0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 1200,
+        "wires": [
+            [
+                "269b27a900458f3d"
+            ]
+        ]
+    },
+    {
+        "id": "10d891f15aedd226",
+        "type": "mqtt out",
+        "z": "60e902fdb043a209",
+        "name": "",
+        "topic": "prueba/data",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "daa5d55161ad42ac",
+        "x": 750,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "ad51022f5fd2adac",
+        "type": "websocket in",
+        "z": "60e902fdb043a209",
+        "name": "Server Websocket",
+        "server": "3a010ceb432158cb",
+        "client": "",
+        "x": 810,
+        "y": 1540,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "42b4a39170bb8b53",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "A-1-032",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{ \"floor\": 1, \"room\": 3, \"bed\": 2, \"alertType\": \"urgent\"}",
+        "payloadType": "json",
+        "x": 390,
+        "y": 1440,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "83c7fc81fe9f876b",
+        "type": "websocket out",
+        "z": "60e902fdb043a209",
+        "name": "Server Websocket",
+        "server": "3a010ceb432158cb",
+        "client": "",
+        "x": 830,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "4e4a297ea98e3d11",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "A-4-022",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{ \"floor\": 4, \"room\": 2, \"bed\": 2, \"alertType\": \"urgent\"}",
+        "payloadType": "json",
+        "x": 390,
+        "y": 1560,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "5c06f13359d66478",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "A-4-285",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{ \"floor\": 4, \"room\": 28, \"bed\": 5, \"alertType\": \"urgent\"}",
+        "payloadType": "json",
+        "x": 390,
+        "y": 1680,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "694c6c398c912d20",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "A-4-154",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{ \"floor\": 4, \"room\": 15, \"bed\": 4, \"alertType\": \"medium\"}",
+        "payloadType": "json",
+        "x": 390,
+        "y": 1780,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "3679a114aac21c41",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "D-1-032",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{ \"floor\": 1, \"room\": 3, \"bed\": 2, \"alertType\": \"normal\"}",
+        "payloadType": "json",
+        "x": 360,
+        "y": 1500,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "1006b52490f9a6ab",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "D-4-022",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{ \"floor\": 4, \"room\": 2, \"bed\": 2, \"alertType\": \"normal\"}",
+        "payloadType": "json",
+        "x": 360,
+        "y": 1620,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "5d256b59a2e1e15d",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "D-4-285",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{ \"floor\": 4, \"room\": 28, \"bed\": 5, \"alertType\": \"normal\"}",
+        "payloadType": "json",
+        "x": 360,
+        "y": 1720,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "5b014d5dbe499175",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "D-4-154",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{ \"floor\": 4, \"room\": 15, \"bed\": 4, \"alertType\": \"normal\"}",
+        "payloadType": "json",
+        "x": 360,
+        "y": 1840,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "f31a9856cd99a067",
+        "type": "serial in",
+        "z": "60e902fdb043a209",
+        "name": "RB4",
+        "serial": "206416303d4218d9",
+        "x": 630,
+        "y": 1800,
+        "wires": [
+            [
+                "83c7fc81fe9f876b",
+                "56f23bfcad973598",
+                "6956956804d41be0"
+            ]
+        ]
+    },
+    {
+        "id": "56f23bfcad973598",
+        "type": "debug",
+        "z": "60e902fdb043a209",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "6c89c7bb5364864d",
+        "type": "inject",
+        "z": "60e902fdb043a209",
+        "name": "D-4-154",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"floor\":4,\"room\":6,\"bed\":3,\"alertType\":\"normal\"}",
+        "payloadType": "json",
+        "x": 360,
+        "y": 1900,
+        "wires": [
+            [
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "c2314fc608147121",
+        "type": "serial in",
+        "z": "60e902fdb043a209",
+        "name": "RB1",
+        "serial": "a36cc33fe9258173",
+        "x": 630,
+        "y": 1920,
+        "wires": [
+            [
+                "83c7fc81fe9f876b",
+                "56f23bfcad973598",
+                "de90a513df9ef744"
+            ]
+        ]
+    },
+    {
+        "id": "439c1e4e874347df",
+        "type": "udp in",
+        "z": "60e902fdb043a209",
+        "name": "HAT",
+        "iface": "",
+        "port": "1700",
+        "ipv": "udp4",
+        "multicast": "false",
+        "group": "",
+        "datatype": "utf8",
+        "x": 530,
+        "y": 1420,
+        "wires": [
+            [
+                "984d10195978a607",
+                "56f23bfcad973598"
+            ]
+        ]
+    },
+    {
+        "id": "984d10195978a607",
+        "type": "function",
+        "z": "60e902fdb043a209",
+        "name": "Decodificar LoRa",
+        "func": "let json = msg.payload;\nif (typeof json === 'string') json = JSON.parse(json);\nlet rxpk = json.rxpk[0];\nlet mensaje = Buffer.from(rxpk.data, 'base64').toString('ascii');\nmsg.payload = mensaje; // \"4,5,2,ROJA:ON\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1440,
+        "wires": [
+            [
+                "56f23bfcad973598",
+                "83c7fc81fe9f876b"
+            ]
+        ]
+    },
+    {
+        "id": "de90a513df9ef744",
+        "type": "mqtt out",
+        "z": "60e902fdb043a209",
+        "name": "",
+        "topic": "edificio/piso/2/alerta",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "40b790ba11410891",
+        "x": 920,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "6956956804d41be0",
+        "type": "mqtt out",
+        "z": "60e902fdb043a209",
+        "name": "",
+        "topic": "edificio/piso/4/alerta",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "40b790ba11410891",
+        "x": 1020,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "9356e642e6feafa8",
+        "type": "serial in",
+        "z": "c8a26642d713aeef",
+        "name": "",
+        "serial": "",
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "634bc52755d43092",
+                "eb6929761525daf2",
+                "362db84a92d73948"
+            ]
+        ]
+    },
+    {
+        "id": "634bc52755d43092",
+        "type": "function",
+        "z": "c8a26642d713aeef",
+        "name": "function 1",
+        "func": "// 1. Convertir el Buffer del serial a String limpio (\"hola\")\nlet texto = msg.payload.toString().trim();\n\n// 2. Estructurar el cuerpo de la petición HTTP (JSON)\nmsg.payload = {\n    dato: texto\n};\n\n// 3. Configurar cabeceras para avisar que enviamos un JSON\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 440,
+        "wires": [
+            [
+                "eb44cd6a65e90f45"
+            ]
+        ]
+    },
+    {
+        "id": "eb44cd6a65e90f45",
+        "type": "websocket out",
+        "z": "c8a26642d713aeef",
+        "name": "",
+        "server": "a85047f371215874",
+        "client": "",
+        "x": 590,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "eb6929761525daf2",
+        "type": "function",
+        "z": "c8a26642d713aeef",
+        "name": "function 2",
+        "func": "let datos_json;\n\n// 1. Convertir el mensaje que viene del serial a JSON de forma segura\ntry {\n    if (typeof msg.payload === \"string\") {\n        datos_json = JSON.parse(msg.payload);\n    } else {\n        datos_json = msg.payload;\n    }\n} catch (error) {\n    // Si lo que viene del serial no es un JSON válido (texto plano o ruido),\n    // lo metemos dentro de un objeto estructurado para que no falle la columna JSON\n    datos_json = { mensaje_crudo: msg.payload };\n}\n\n// 2. Definir el Query para la tabla 'pureba'\n// Nota cómo encerramos \"1\" y \"2\" en comillas dobles por ser números\nmsg.query = 'INSERT INTO Prueba2 (\"created_at\", \"data\") VALUES ($1, $2);';\n\n// 3. Generar los parámetros para los marcadores $1 y $2\n// $1 -> El timestamp actual generado en Node-RED (en formato ISO compatible con Postgres)\n// $2 -> El objeto JSON convertido a texto estructurado\nconst timestamp_actual = new Date().toISOString();\nconst json_para_bd = JSON.stringify(datos_json);\n\nmsg.params = [\n    timestamp_actual, // Esto ocupará el lugar de $1 (columna \"1\")\n    json_para_bd      // Esto ocupará el lugar de $2 (columna \"2\")\n];\n\n// Enviamos el mensaje preparado al nodo de PostgreSQL\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 360,
+        "wires": [
+            [
+                "fb6fdaa60178cde7"
+            ]
+        ]
+    },
+    {
+        "id": "fb6fdaa60178cde7",
+        "type": "postgresql",
+        "z": "c8a26642d713aeef",
+        "name": "",
+        "query": "SELECT * FROM ;",
+        "postgreSQLConfig": "ab0f7e82d48ddfce",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 590,
+        "y": 360,
+        "wires": [
+            [
+                "f852e03218fd5fd5"
+            ]
+        ]
+    },
+    {
+        "id": "f852e03218fd5fd5",
+        "type": "debug",
+        "z": "c8a26642d713aeef",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "362db84a92d73948",
+        "type": "debug",
+        "z": "c8a26642d713aeef",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "05bf74e073b9b461",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-modbus": "5.45.2",
+            "node-red-node-serialport": "2.0.3",
+            "node-red-contrib-postgresql": "0.15.4"
+        }
+    }
+]
